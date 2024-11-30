@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bánh Ngọt Ngon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Ngon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="image/logo.webp" alt="Logo Bánh Ngọt Ngon">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            <input type="text" id="searchInput" placeholder="Tìm sản phẩm...">
+        </nav>
+        <div class="cart">
+            <a href="javascript:void(0)" id="cart-icon" class="cart-icon">
+                <img src="image/g.webp" alt="Giỏ hàng">
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+        <div class="admin-login">
+            <a href="javascript:void(0)" id="admin-login-btn">Đăng nhập Admin</a>
+            <a href="javascript:void(0)" id="admin-btn" style="display: none;">Admin</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Chào mừng bạn đến với Tiệm Bánh 3N2T</h1>
+            <p>Mỗi chiếc bánh là một tác phẩm nghệ thuật, mang đến sự ngọt ngào cho cuộc sống.</p>
+            <a href="#products" class="btn">Khám phá ngay</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2>Sản phẩm nổi bật</h2>
+        <div class="product-list">
+            <div class="product-item" data-id="1">
+                <img src="image/li.avif" alt="Product 1" onclick="viewProductDetail(1)">
+                <h3 onclick="viewProductDetail(1)">Bánh Anh Đào</h3>
+                <p class="product-price">Giá: 200,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="2">
+                <img src="image/sôc.avif" alt="Product 2" onclick="viewProductDetail(2)">
+                <h3 onclick="viewProductDetail(2)">Bánh Socola</h3>
+                <p class="product-price">Giá: 200,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="3">
+                <img src="image/chanh.avif" alt="Product 3" onclick="viewProductDetail(3)">
+                <h3 onclick="viewProductDetail(3)">Bánh Chanh Vàng</h3>
+                <p class="product-price">Giá: 250,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="4">
+                <img src="image/xoai.avif" alt="Product 4" onclick="viewProductDetail(4)">
+                <h3 onclick="viewProductDetail(4)">Bánh Xoài, Lá dứa</h3>
+                <p class="product-price">Giá: 200,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="5">
+                <img src="image/cherry.avif" alt="Product 5" onclick="viewProductDetail(5)">
+                <h3 onclick="viewProductDetail(5)">Bánh Cherry</h3>
+                <p class="product-price">Giá: 300,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="6">
+                <img src="image/vani.avif" alt="Product 6" onclick="viewProductDetail(6)">
+                <h3 onclick="viewProductDetail(6)">Bánh Vani</h3>
+                <p class="product-price">Giá: 300,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="7">
+                <img src="image/socola trang.avif" alt="Product 7" onclick="viewProductDetail(7)">
+                <h3 onclick="viewProductDetail(7)">Bánh Socola Trắng</h3>
+                <p class="product-price">Giá: 200,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="8">
+                <img src="image/hp.avif" alt="Product 8" onclick="viewProductDetail(8)">
+                <h3 onclick="viewProductDetail(8)">Phụ kiện Happy Birthday</h3>
+                <p class="product-price">Giá: 30,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="9">
+                <img src="image/nen.avif" alt="Product 9" onclick="viewProductDetail(9)">
+                <h3 onclick="viewProductDetail(9)">Phụ kiện Nến</h3>
+                <p class="product-price">Giá: 15,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="10">
+                <img src="image/thiep.avif" alt="Product 10" onclick="viewProductDetail(10)">
+                <h3 onclick="viewProductDetail(10)">Phụ kiện Thiệp</h3>
+                <p class="product-price">Giá: 12,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="11">
+                <img src="image/congratulations.avif" alt="Product 11" onclick="viewProductDetail(11)">
+                <h3 onclick="viewProductDetail(11)">Phụ kiện Chúc Mừng</h3>
+                <p class="product-price">Giá: 30,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="12">
+                <img src="image/thiep1.avif" alt="Product 12" onclick="viewProductDetail(12)">
+                <h3 onclick="viewProductDetail(12)">Phụ kiện Thiệp</h3>
+                <p class="product-price">Giá: 12,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="13">
+                <img src="image/thiep2.avif" alt="Product 13" onclick="viewProductDetail(13)">
+                <h3 onclick="viewProductDetail(13)">Phụ kiện Thiệp</h3>
+                <p class="product-price">Giá: 12,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product-item" data-id="14">
+                <img src="image/thiep3.avif" alt="Product 14" onclick="viewProductDetail(14)">
+                <h3 onclick="viewProductDetail(14)">Phụ kiện Thiệp</h3>
+                <p class="product-price">Giá: 12,000 VND</p>
+                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+        <button id="loadMoreBtn" style="display: none;">Xem thêm</button>
+        <div id="pagination"></div>
+        <div id="product-detail" class="product-detail">
+            <button onclick="closeProductDetail()">Đóng</button>
+            <h2 id="product-name">Tên sản phẩm</h2>
+            <img id="product-image" src="" alt="Ảnh sản phẩm"/>
+            <p id="product-price">Giá: 0 VNĐ</p>
+            <p id="product-description">Mô tả sản phẩm chi tiết...</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>Giới thiệu về chúng tôi</h2>
+        <p>Tiệm bánh 3N2T được thành lập với niềm đam mê mang đến những chiếc bánh tươi ngon, chất lượng và đầy sáng tạo. Với công thức đặc biệt và nguyên liệu tươi mới, chúng tôi luôn mong muốn mang lại niềm vui cho bạn và gia đình qua mỗi chiếc bánh.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Liên hệ với chúng tôi</h2>
+        <form id="contact-form">
+            <label for="name">Họ tên:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Tin nhắn:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit" class="btn">Gửi tin nhắn</button>
+        </form>
+    </section>
+
+    <!-- Modal chi tiết sản phẩm -->
+    <div id="product-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2 id="modal-product-name">Tên sản phẩm</h2>
+            <p id="modal-product-description">Mô tả chi tiết sản phẩm</p>
+            <p id="modal-product-price">Giá: 0 VND</p>
+            <button id="add-to-cart-btn">Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+
+    <!-- Modal Giỏ hàng -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCartModal()">&times;</span>
+            <h2>Giỏ hàng</h2>
+            <div id="cart-items">
+                <!-- Mỗi sản phẩm trong giỏ hàng sẽ có cấu trúc như sau: -->
+                <div class="cart-item">
+                    <img src="image/product-image.jpg" alt="Product Image">
+                    <div class="details">
+                        <h4>Product Name</h4>
+                        <p>Price: 50,000 VND</p>
+                    </div>
+                    <button class="remove-btn">Xóa</button>
+                </div>
+            </div>
+            <div class="cart-modal-total">
+                <span class="total">Tổng tiền: <span id="cart-total">0 VND</span></span>
+                <button class="checkout-btn" onclick="checkout()">Thanh toán</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Chỉnh sửa sản phẩm (Admin) -->
+    <div id="edit-product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-edit-modal">&times;</span>
+            <h2>Chỉnh sửa sản phẩm</h2>
+            <form id="edit-product-form">
+                <label for="edit-product-name">Tên sản phẩm:</label>
+                <input type="text" id="edit-product-name" required>
+                <label for="edit-product-price">Giá sản phẩm:</label>
+                <input type="number" id="edit-product-price" required>
+                <button type="submit" class="btn">Lưu thay đổi</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-admin-modal">&times;</span>
+            <h2>Đăng nhập Admin</h2>
+            <form id="admin-login-form">
+                <label for="admin-username">Tài khoản:</label>
+                <input type="text" id="admin-username" required>
+                <label for="admin-password">Mật khẩu:</label>
+                <input type="password" id="admin-password" required>
+                <button type="submit" class="btn">Đăng nhập</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Bánh Ngọt Ngon. Tất cả quyền được bảo vệ.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
